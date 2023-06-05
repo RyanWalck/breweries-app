@@ -16,3 +16,7 @@ First you can fork and or clone this repo and load it on your coumputer or you c
 
 Once on the App you can read the home page and then navigate to the Breweries Index and click away on all the breweries for the information.
 
+
+Click [Here] (beer-app-project-3.netlify.app)to go to my app!
+
+
