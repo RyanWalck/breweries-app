@@ -8,10 +8,11 @@ import { Route, Routes } from "react-router-dom";
 
 function App() {
   const [breweries, setBreweries] = useState([]);
-   
-  useEffect (() =>{
+  // console.log(breweries);
+
+  useEffect(() => {
     const fetchBreweries = async () => {
-      try{
+      try {
         const response = await fetch(
           `https://api.openbrewerydb.org/v1/breweries?per_page=20`
         );
@@ -24,16 +25,23 @@ function App() {
     fetchBreweries();
   }, []);
 
-
   return (
     <div className="App">
       <Nav />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/breweriesIndex" element={<BreweriesIndex breweries={breweries} /> }/>
-        <Route path="/brewId" element={<BreweriesShow breweries={breweries} />} />
+        <Route
+          path="/breweriesIndex"
+          element={
+            <BreweriesIndex breweries={breweries} />
+          }
+        />
+        <Route
+          path="/:brewId"
+          element={<BreweriesShow breweries={breweries} />}
+        />
       </Routes>
-      </div>
+    </div>
   );
 }
 

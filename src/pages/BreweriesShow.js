@@ -3,73 +3,86 @@ import { useParams } from "react-router";
 import "./Breweries.css";
 
 function BreweriesShow({ breweries }) {
-    const [breweryDetails, setBreweryDetails] = useState({});
-    const beer = useParams();
+  const [breweryDetails, setBreweryDetails] = useState({});
 
-     useEffect(() => { 
-        breweries.forEach((brew) =>{
-            if (brew.id === beer.brewID) {
-                setBreweryDetails(brew);
-            }
-        });
-    }, [breweries, beer.brewID]);
+  
 
-    return (
-        <main>
-            <h2>Breweries!</h2>
-            <section className="brewery-details-container">
-                <article>
-                    <div className="brewery-details">
-                        <small>Phone :</small>
-                        <h3>{breweryDetails.phone}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>Brewery Type :</small>
-                        <h3>{breweryDetails.brewery_type}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>Address :</small>
-                        <h3>{breweryDetails.street}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>Postal Code :</small>
-                        <h3>{breweryDetails.postal_code}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>City :</small>
-                        <h3>{breweryDetails.city}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>State :</small>
-                        <h3>{breweryDetails.state}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>State province :</small>
-                        <h3>{breweryDetails.state_province}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>Country  :</small>
-                        <h3>{breweryDetails.country}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>Website :</small>
-                        <a herf={breweryDetails.website_url}>
-                            {" "}
-                            {breweryDetails.website_url}{" "}
-                        </a>    
-                    </div>
-                    <div className="brewery-details">
-                        <small>Latitude :</small>
-                        <h3>{breweryDetails.latitude}</h3>
-                    </div>
-                    <div className="brewery-details">
-                        <small>Longitude :</small>
-                        <h3>{breweryDetails.longitude}</h3>
-                    </div>
-                </article>
-            </section>
-        </main>
-    );
+  
+  const beer = useParams();
+  
+
+  
+  useEffect(() => {
+    
+    breweries.forEach((brew) => {
+      if (brew.id === beer.brewId) {
+        setBreweryDetails(brew);
+      }
+    });
+  }, [breweries, beer.brewId]);
+
+  console.log(breweryDetails);
+
+  return (
+    <main>
+      <h2>Show page per Breweries </h2>
+      <section className="brewery-details-container">
+        <article>
+          <div className="brewery-details">
+            <small> Name :</small>
+            <h3> {breweryDetails.name} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Phone :</small>
+            <h3> {breweryDetails.phone} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Brewery Type :</small>
+            <h3> {breweryDetails.brewery_type} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Address :</small>
+            <h3> {breweryDetails.street} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Postal code :</small>
+            <h3> {breweryDetails.postal_code} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> City :</small>
+            <h3> {breweryDetails.city} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> State :</small>
+            <h3> {breweryDetails.state} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> State province :</small>
+            <h3> {breweryDetails.state_province} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Country:</small>
+            <h3> {breweryDetails.country} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Website:</small>
+            <a href={breweryDetails.website_url}>
+              {" "}
+              {breweryDetails.website_url}{" "}
+            </a>
+          </div>
+          <div className="brewery-details">
+            <small> Latitude:</small>
+            <h3> {breweryDetails.latitude} </h3>
+          </div>
+          <div className="brewery-details">
+            <small> Longitude:</small>
+            <h3> {breweryDetails.longitude} </h3>
+          </div>
+        </article>
+      </section>
+    </main>
+  );
 }
 
 export default BreweriesShow;
