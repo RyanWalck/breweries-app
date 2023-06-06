@@ -5,15 +5,9 @@ import "./Breweries.css";
 function BreweriesShow({ breweries }) {
   const [breweryDetails, setBreweryDetails] = useState({});
 
-  
-
-  
   const beer = useParams();
-  
 
-  
   useEffect(() => {
-    
     breweries.forEach((brew) => {
       if (brew.id === beer.brewId) {
         setBreweryDetails(brew);

@@ -32,9 +32,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route
           path="/breweriesIndex"
-          element={
-            <BreweriesIndex breweries={breweries} />
-          }
+          element={<BreweriesIndex breweries={breweries} />}
         />
         <Route
           path="/:brewId"
