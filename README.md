@@ -19,4 +19,4 @@ Once on the App you can read the home page and then navigate to the Breweries In
 
 
 
-Click [this link](beer-app-project-3.netlify.app) to go to my Breweries App!
+Click [this link]( beer-app-project-3.netlify.app ) to go to my Breweries App!
